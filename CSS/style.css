@@ -64,6 +64,12 @@ body{
 }
 
 .scene{
+    position: fixed;   /* ⭐ THIS is what you were missing */
+
+    top:0;
+    left:0;
+
+    width:100%;
     height:100vh;
 
     display:flex;
@@ -71,8 +77,18 @@ body{
     justify-content:center;
     align-items:center;
     text-align:center;
-    overflow: hidden;
-    padding: 20px;
+
+    overflow:hidden;
+    padding:20px;
+
+    opacity:0;
+    pointer-events:none;
+    transition:1s ease;
+}
+
+.scene.active{
+    opacity:1;
+    pointer-events:auto;
 }
 
 .title{
@@ -163,3 +179,31 @@ button:hover{
     z-index:0;
 }
 
+#scene2{
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.75)
+    ),
+    url("/assets/images/IMG_0881.jpg");
+
+    background-size: cover;
+    background-position: center;
+    animation: slowZoom 15s ease-out forwards;
+
+}
+
+@keyframes slowZoom{
+    from{
+        background-size:115%;
+    }
+
+    to{
+        background-size:90%;
+    }
+}
+
+.love-line{
+    text-shadow: 0 4px 18px rgba(0,0,0,0.8);
+    margin: 32px 0;
+}

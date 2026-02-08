@@ -78,5 +78,27 @@ tsParticles.load("tsparticles", {
   }
 });
 
+yesBtn.addEventListener("click", () => {
+    document
+        .getElementById("scene1")
+        .classList.remove("active");
+
+    document
+        .getElementById("scene2")
+        .classList.add("active");
+
+    setTimeout(() => {
+
+        document
+            .getElementById("scene2")
+            .classList.remove("active");
+
+        document
+            .getElementById("scene3")
+            .classList.add("active");
+
+    }, 30000);
+});
+
 
 
