@@ -1,0 +1,165 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #0f0f14,
+        #1a1a2e,
+        #16213e
+    );
+
+    min-height:100vh;
+    color: white;
+    background-size: 400% 400%;
+
+    animation: gradientMove 12s ease infinite;
+    overflow-x:hidden;
+}
+
+@keyframes gradientMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.glow{
+    position:fixed;
+    width:600px;
+    height:600px;
+
+    background:radial-gradient(
+        circle,
+        rgba(255,46,99,0.25),
+        transparent 60%
+    );
+
+    filter:blur(120px);
+
+    top:-150px;
+    left:-150px;
+
+    z-index:-1;
+    animation: floatGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(200px,150px);
+    }
+}
+
+.scene{
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.title{
+    font-family:'Playfair Display',serif;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    margin-bottom:40px;
+    text-shadow:0 0 18px rgba(255,255,255,0.15);
+}
+
+.buttons{
+    display:flex;
+    gap:20px;
+}
+
+@media (max-width: 600px){
+
+    .buttons{
+        flex-direction:column;
+        width:80%;
+    }
+
+    button{
+        width:100%;
+    }
+
+}
+
+
+button{
+    padding:14px 34px;
+    font-size:1rem;
+    border-radius:40px;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+    transform-origin:center;
+}
+
+/* YES button */
+#yesBtn{
+
+    background:#ff2e63;
+    color:white;
+
+    transition:0.25s;
+    box-shadow:0 0 0 rgba(255,46,99,0.7);
+}
+
+#yesBtn:hover{
+    box-shadow:0 0 25px rgba(255,46,99,0.7);
+}
+/* NO button */
+#noBtn{
+    background:#25252b;
+    color:white;
+    z-index: 1;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+.title{
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+#noMessage{
+    margin-top:25px;
+    opacity:0.8;
+    font-size: large;
+}
+
+#tsparticles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:0;
+}
+
