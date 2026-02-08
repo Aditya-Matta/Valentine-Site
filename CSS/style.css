@@ -96,6 +96,7 @@ body{
     font-size: clamp(2rem, 6vw, 3.2rem);
     margin-bottom:40px;
     text-shadow:0 0 18px rgba(255,255,255,0.15);
+    animation: fadeUp 1s ease;
 }
 
 .buttons{
@@ -151,10 +152,6 @@ button:hover{
     transform:scale(1.08);
 }
 
-.title{
-    animation:fadeUp 1s ease;
-}
-
 @keyframes fadeUp{
     from{
         opacity:0;
@@ -190,8 +187,35 @@ button:hover{
     background-size: cover;
     background-position: center;
     animation: slowZoom 15s ease-out forwards;
-
+    position: fixed;
+    inset:0;
+    overflow:hidden;
 }
+
+#scene2::before{
+
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.55)
+    ),
+
+    url("../assets/images/hero.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    filter: blur(4px) brightness(1.15);
+
+    transform: scale(1.08); /* prevents blur edges */
+
+    z-index:-1;
+}
+
 
 @keyframes slowZoom{
     from{
@@ -206,4 +230,28 @@ button:hover{
 .love-line{
     text-shadow: 0 4px 18px rgba(0,0,0,0.8);
     margin: 32px 0;
+
+    opacity:0;
+    transform:translateY(40px);
 }
+
+#scene2.active .love-line{
+    animation: fadeUpLL 1.6s ease forwards;
+}
+
+@keyframes fadeUpLL{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+#scene2.active .love-line:nth-child(1){ animation-delay: 1s; }
+#scene2.active .love-line:nth-child(2){ animation-delay: 4s; }
+#scene2.active .love-line:nth-child(3){ animation-delay: 7s; }
+#scene2.active .love-line:nth-child(4){ animation-delay: 10s; }
+#scene2.active .love-line:nth-child(5){ animation-delay: 13s; }
+#scene2.active .love-line:nth-child(6){ animation-delay: 16s; }
+#scene2.active .love-line:nth-child(7){ animation-delay: 19s; }
+#scene2.active .love-line:nth-child(8){ animation-delay: 23s; }
