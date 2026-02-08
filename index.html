@@ -6,8 +6,32 @@
     <title>Document</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
 </head>
+<div class="popup" id="popup">
+
+    <div class="popup-content">
+
+        <span class="close-btn">&times;</span>
+
+        <div id="popup-body"></div>
+
+    </div>
+
+</div>
+<div class="heart-bloom" id="heartBloom">
+    <div class="open-notes">
+
+    <div class="note" data-message ="Just remember — no matter how heavy the day feels, you never carry it alone. I am always right beside you."> Open when you feel low…</div>
+
+    <div class="note" data-message="Somewhere in this world, there is a girl smiling right now… simply because you exist.">Open when you need a smile…</div>
+
+    <div class="note" data-message="Close your eyes and imagine me holding your hand… that’s where I always want to be.">Open when you can't sleep…</div>
+
+    <div class="note" data-message="In every lifetime, in every version of this universe — I would still choose you.">Open when you doubt my love…</div>
+
+</div>
+
+</div>
 <body>
     <div id="tsparticles"></div>
 
@@ -82,8 +106,35 @@
 </section>
 
 <section id="scene3" class="scene">
-    <h1>Choose Your Surprise 🎁</h1>
+
+    <h1 class="gift-title">
+        Choose Your Surprise 🎁
+    </h1>
+
+    <div class="gift-container">
+
+        <div class="gift-card">
+            💌
+            <span>For the days you need me…</span>
+        </div>
+
+        <div class="gift-card">
+            📸
+            <span>Moments that are ours…</span>
+        </div>
+
+        <div class="gift-card">
+            🎵
+            <span>Press play when you miss me</span>
+        </div>
+
+    </div>
+
 </section>
+
+<audio id="loveSong">
+    <source src="assets/music/Raabta Agent Vinod 128 Kbps.mp3" type="audio/mpeg">
+</audio>
 
 
 </body>
